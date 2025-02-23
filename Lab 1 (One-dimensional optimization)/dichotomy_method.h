@@ -25,7 +25,6 @@ std::pair<T,T> dichotomy_method(std::function<T(T)> func, T left, T right, T del
 			left=x_1;
 		}
 		iteration_count++;
-		outFile << left << " " << right << std::endl;
 	}
 	if (show_iterations){
 		std::cout << "Convergence after " << iteration_count << " iterations and " << 2*iteration_count << " function calculations" <<  std::endl;
