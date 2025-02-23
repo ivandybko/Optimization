@@ -27,7 +27,6 @@ std::pair<T,T> golden_section_search(std::function<T(T)> func, T left, T right, 
 			f_2 = func(x_2);
 		}
 		iteration_count++;
-		outFile << left << " " << right << std::endl;
 	}
 	if (show_iterations){
 		std::cout << "Convergence after " << iteration_count << " iterations " << 1+iteration_count << " function calculations" <<  std::endl;
