@@ -39,5 +39,6 @@ std::pair<T,T> dichotomy_method(std::function<T(T)> func, T left, T right, T del
 		std::cout << "Convergence after " << iteration_count << " iterations and " << 2*iteration_count << " function calculations" <<  std::endl;
 	}
 	return std::make_pair((a+b)/2,f((a+b)/2));
+	return {(left + right) / 2,func((left + right) / 2)};
 }
 #endif //DICHOTOMY_METHOD_H
