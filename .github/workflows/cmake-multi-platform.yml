@@ -42,8 +42,8 @@ jobs:
       id: strings
       shell: bash
       run: |
-        echo "build-output-dir=${{ github.workspace }}/Optimization/Lab1/build" >> "$GITHUB_OUTPUT"
-        echo "source-dir=${{ github.workspace }}/Optimization/Lab 1 (One-dimensional optimization)" >> "$GITHUB_OUTPUT"
+        echo "build-output-dir=${{ github.workspace }}/Lab1/build" >> "$GITHUB_OUTPUT"
+        echo "source-dir=${{ github.workspace }}/Lab 1 (One-dimensional optimization)" >> "$GITHUB_OUTPUT"
 
     - name: Configure CMake for Lab1
       run: >
