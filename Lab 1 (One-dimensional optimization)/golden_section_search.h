@@ -32,6 +32,6 @@ std::pair<T,T> golden_section_search(std::function<T(T)> func, T left, T right, 
 	if (show_iterations){
 		std::cout << "Convergence after " << iteration_count << " iterations " << 1+iteration_count << " function calculations" <<  std::endl;
 	}
-	return std::make_pair((a+b)/2,f((a+b)/2));
+	return {(left + right) / 2,func((left + right) / 2)};
 }
 #endif //GOLDEN_SECTION_SEARCH_H
