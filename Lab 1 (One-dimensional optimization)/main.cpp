@@ -19,11 +19,12 @@ int main()
 	auto min_d_2 = dichotomy_method<double>(test1, 0.0, 1.0, 1e-9,1e-8, true);
 	std::cout << "Dichotomy method: (x=" << std::setprecision(8) << min_d_2.first << ", f(x)=" << min_d_2.second << ")" <<  '\n';
 	auto min_g_2 = golden_section_search<double>(test1, 0.0, 1.0,1e-8, true);
-	std::cout << "Golden section search: (x=" << min_g_2.first << ", f(x)=" << min_g_2.second << ")" <<  '\n' <<  '\n';
+	std::cout << "Golden section search: (x=" << std::setprecision(8) << min_g_2.first << ", f(x)=" << std::setprecision(8) << min_g_2.second << ")" <<  '\n' <<  '\n';
 	auto min_d_3 = dichotomy_method<double>(test1, 0.0, 1.0, 1e-18,1e-17, true);
-	std::cout << "Dichotomy method: (x=" << min_d_3.first << ", f(x)=" << min_d_3.second << ")" <<  '\n';
+	std::cout << "Dichotomy method: (x=" << std::setprecision(17) << min_d_3.first << ", f(x)=" << std::setprecision(17) << min_d_3.second << ")" <<  '\n';
 	auto min_g_3 = golden_section_search<double>(test1, 0.0, 1.0,1e-17, true);
-	std::cout << "Golden section search: (x=" << min_g_3.first << ", f(x)=" << min_g_3.second << ")" <<  '\n' <<  '\n';
+	std::cout << "Golden section search: (x=" << std::setprecision(17) << min_g_3.first << ", f(x)=" << std::setprecision(17) << min_g_3.second << ")" <<  '\n' <<  '\n';
+
 	return 0;
 }
 
