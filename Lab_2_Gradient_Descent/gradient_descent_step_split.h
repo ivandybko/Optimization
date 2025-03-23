@@ -1,8 +1,0 @@
-//
-// Created by Ivan Dybko on 27.02.25.
-//
-
-#ifndef GRADIENT_DESCENT_STEP_SPLIT_H
-#define GRADIENT_DESCENT_STEP_SPLIT_H
-
-#endif //GRADIENT_DESCENT_STEP_SPLIT_H
