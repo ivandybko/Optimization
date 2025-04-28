@@ -45,6 +45,18 @@ void multiply(const std::vector<std::vector<T>>& A, const std::vector<std::vecto
 }
 
 template <typename T>
+std::vector<std::vector<T>> operator*(const std::vector<std::vector<T>>& A,
+									const std::vector<std::vector<T>>& B) {
+	if (A.empty() || B.empty() || A[0].size() != B.size()) {
+		throw std::invalid_argument("Несовместимые размеры матриц для умножения");
+	}
+
+	std::vector<std::vector<T>> result(A.size(), std::vector<T>(B[0].size(), 0));
+	multiply(A, B, result);  // Используем существующую функцию multiply
+	return result;
+}
+
+template <typename T>
 std::vector<T> multiplyVectorByConstant(const std::vector<T>& vec, T constant) {
 	size_t n{vec.size()};
 	std::vector<T> result(n);
@@ -280,4 +292,34 @@ void normalize(std::vector<T>& vec) {
 		val /= norm;
 	}
 }
+template <typename T>
+std::vector<std::vector<T>> operator^(const std::vector<T>& col, const std::vector<T>& row) {
+	if (col.size() == 0 || row.size() == 0) {
+		throw std::invalid_argument("Векторы не могут быть пустыми");
+	}
+
+	std::vector<std::vector<T>> result(col.size(), std::vector<T>(row.size()));
+	for (size_t i = 0; i < col.size(); ++i) {
+		for (size_t j = 0; j < row.size(); ++j) {
+			result[i][j] = col[i] * row[j];
+		}
+	}
+	return result;
+}
+
+template <typename T>
+std::vector<std::vector<T>> operator/(const std::vector<std::vector<T>>& matrix, T scalar) {
+	if (scalar == 0) {
+		throw std::invalid_argument("Деление на ноль недопустимо");
+	}
+
+	std::vector<std::vector<T>> result(matrix.size(), std::vector<T>(matrix[0].size()));
+	for (size_t i = 0; i < matrix.size(); ++i) {
+		for (size_t j = 0; j < matrix[i].size(); ++j) {
+			result[i][j] = matrix[i][j] / scalar;
+		}
+	}
+	return result;
+}
+
 #endif //LAB_1_SRC_MATRIX_OPERATIONS_H_
